@@ -31,7 +31,7 @@ fun startEmulators(
         connectedAdbDevices: () -> Observable<Set<AdbDevice>> = ::connectedAdbDevices,
         createAvd: (args: Commands.Start) -> Observable<Unit> = ::createAvd,
         applyConfig: (args: Commands.Start) -> Observable<Unit> = ::applyConfig,
-        emulator: () -> String = { "$androidHome/tools/emulator" },
+        emulator: () -> String = { "$androidHome/emulator/emulator" },
         findAvailablePortsForNewEmulator: () -> Observable<Pair<Int, Int>> = ::findAvailablePortsForNewEmulator,
         startEmulatorProcess: (List<String>, File?) -> Observable<Notification> = ::startEmulatorProcess,
         waitForEmulatorToStart: (Commands.Start, () -> Observable<Set<AdbDevice>>, Observable<Notification>, Pair<Int, Int>) -> Observable<Emulator> = ::waitForEmulatorToStart,
